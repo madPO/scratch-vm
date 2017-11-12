@@ -83,6 +83,16 @@ const specMap = {
         argMap:[
         ]
     },
+    'sensors':{
+        opcode: 'sensing_sensors',
+        argMap:[
+        ]
+    },
+    'ultrasound':{
+        opcode: 'sensing_ultrasound',
+        argMap:[
+        ]
+    },
     'hello:': {
         opcode: 'services_hello',
         argMap: [
