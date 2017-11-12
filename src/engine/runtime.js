@@ -17,7 +17,7 @@ const Mouse = require('../io/mouse');
 const defaultBlockPackages = {
     scratch3_control: require('../blocks/scratch3_control'),
     scratch3_event: require('../blocks/scratch3_event'),
-    scratch3_looks: require('../blocks/scratch3_looks'),
+    scratch3_services: require('../blocks/scratch3_services'),
     scratch3_motion: require('../blocks/scratch3_motion'),
     scratch3_operators: require('../blocks/scratch3_operators'),
     scratch3_sound: require('../blocks/scratch3_sound'),

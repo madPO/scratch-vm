@@ -22,355 +22,69 @@
  * Finally, I filled in the expected arguments as below.
  */
 const specMap = {
-    'forward:': {
-        opcode: 'motion_movesteps',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'STEPS'
-            }
+    'start':{
+        opcode:'motion_start',
+        argMap:[
         ]
     },
-    'turnRight:': {
-        opcode: 'motion_turnright',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'DEGREES'
-            }
-        ]
-    },
-    'turnLeft:': {
-        opcode: 'motion_turnleft',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'DEGREES'
-            }
-        ]
-    },
-    'heading:': {
-        opcode: 'motion_pointindirection',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_angle',
-                inputName: 'DIRECTION'
-            }
-        ]
-    },
-    'pointTowards:': {
-        opcode: 'motion_pointtowards',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'motion_pointtowards_menu',
-                inputName: 'TOWARDS'
-            }
-        ]
-    },
-    'gotoX:y:': {
-        opcode: 'motion_gotoxy',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'X'
-            },
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'Y'
-            }
-        ]
-    },
-    'gotoSpriteOrMouse:': {
-        opcode: 'motion_goto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'motion_goto_menu',
-                inputName: 'TO'
-            }
-        ]
-    },
-    'glideSecs:toX:y:elapsed:from:': {
-        opcode: 'motion_glidesecstoxy',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'SECS'
-            },
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'X'
-            },
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'Y'
-            }
-        ]
-    },
-    'changeXposBy:': {
-        opcode: 'motion_changexby',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'DX'
-            }
-        ]
-    },
-    'xpos:': {
-        opcode: 'motion_setx',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'X'
-            }
-        ]
-    },
-    'changeYposBy:': {
-        opcode: 'motion_changeyby',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'DY'
-            }
-        ]
-    },
-    'ypos:': {
-        opcode: 'motion_sety',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'Y'
-            }
-        ]
-    },
-    'bounceOffEdge': {
-        opcode: 'motion_ifonedgebounce',
-        argMap: [
-        ]
-    },
-    'setRotationStyle': {
-        opcode: 'motion_setrotationstyle',
-        argMap: [
+    'go':{
+        opcode:'motion_go',
+        argMap:[
             {
                 type: 'field',
-                fieldName: 'STYLE'
-            }
-        ]
-    },
-    'xpos': {
-        opcode: 'motion_xposition',
-        argMap: [
-        ]
-    },
-    'ypos': {
-        opcode: 'motion_yposition',
-        argMap: [
-        ]
-    },
-    'heading': {
-        opcode: 'motion_direction',
-        argMap: [
-        ]
-    },
-    'say:duration:elapsed:from:': {
-        opcode: 'looks_sayforsecs',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'text',
-                inputName: 'MESSAGE'
+                fieldName: 'SERV_OPTION'
             },
             {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'SECS'
-            }
-        ]
-    },
-    'say:': {
-        opcode: 'looks_say',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'text',
-                inputName: 'MESSAGE'
-            }
-        ]
-    },
-    'think:duration:elapsed:from:': {
-        opcode: 'looks_thinkforsecs',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'text',
-                inputName: 'MESSAGE'
+                type:'input',
+                fieldName:'POSITION'
             },
             {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'SECS'
+                type:'input',
+                fieldName:'SECONDS'
             }
         ]
     },
-    'think:': {
-        opcode: 'looks_think',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'text',
-                inputName: 'MESSAGE'
-            }
-        ]
-    },
-    'show': {
-        opcode: 'looks_show',
-        argMap: [
-        ]
-    },
-    'hide': {
-        opcode: 'looks_hide',
-        argMap: [
-        ]
-    },
-    'lookLike:': {
-        opcode: 'looks_switchcostumeto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'looks_costume',
-                inputName: 'COSTUME'
-            }
-        ]
-    },
-    'nextCostume': {
-        opcode: 'looks_nextcostume',
-        argMap: [
-        ]
-    },
-    'startScene': {
-        opcode: 'looks_switchbackdropto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'looks_backdrops',
-                inputName: 'BACKDROP'
-            }
-        ]
-    },
-    'changeGraphicEffect:by:': {
-        opcode: 'looks_changeeffectby',
-        argMap: [
+    'move':{
+        opcode:'motion_move',
+        argMap:[
             {
                 type: 'field',
-                fieldName: 'EFFECT'
+                fieldName: 'SERV_OPTION'
             },
             {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'CHANGE'
+                type:'input',
+                fieldName:'POSITION'
+            },
+            {
+                type:'input',
+                fieldName:'SECONDS'
             }
         ]
     },
-    'setGraphicEffect:to:': {
-        opcode: 'looks_seteffectto',
-        argMap: [
+    'set':{
+        opcode:'motion_set',
+        argMap:[
             {
                 type: 'field',
-                fieldName: 'EFFECT'
+                fieldName: 'SERV_OPTION'
             },
             {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'VALUE'
-            }
-        ]
-    },
-    'filterReset': {
-        opcode: 'looks_cleargraphiceffects',
-        argMap: [
-        ]
-    },
-    'changeSizeBy:': {
-        opcode: 'looks_changesizeby',
-        argMap: [
+                type:'input',
+                fieldName:'POSITION'
+            },
             {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'CHANGE'
+                type:'input',
+                fieldName:'SECONDS'
             }
         ]
     },
-    'setSizeTo:': {
-        opcode: 'looks_setsizeto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'SIZE'
-            }
+    'motionCommit':{
+        opcode:'motion_commit',
+        argMap:[
         ]
     },
-    'comeToFront': {
-        opcode: 'looks_gotofront',
-        argMap: [
-        ]
-    },
-    'goBackByLayers:': {
-        opcode: 'looks_gobacklayers',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_integer',
-                inputName: 'NUM'
-            }
-        ]
-    },
-    'costumeIndex': {
-        opcode: 'looks_costumeorder',
-        argMap: [
-        ]
-    },
-    'sceneName': {
-        opcode: 'looks_backdropname',
-        argMap: [
-        ]
-    },
-    'scale': {
-        opcode: 'looks_size',
-        argMap: [
-        ]
-    },
-    'startSceneAndWait': {
-        opcode: 'looks_switchbackdroptoandwait',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'looks_backdrops',
-                inputName: 'BACKDROP'
-            }
-        ]
-    },
-    'nextScene': {
-        opcode: 'looks_nextbackdrop',
-        argMap: [
-        ]
-    },
-    'backgroundIndex': {
-        opcode: 'looks_backdroporder',
+    'hello:': {
+        opcode: 'services_hello',
         argMap: [
         ]
     },
