@@ -93,133 +93,27 @@ const specMap = {
         argMap:[
         ]
     },
+    'play':{
+        opcode:'sound_play',
+        argMap:[
+            {
+                type:'input',
+                fieldName:'WHAT'
+            }
+        ]
+    },
+    'sound':{
+        opcode:'sound_sound',
+        argMap:[
+        ]
+    },
+    'mute':{
+        opcode:'sound_mute',
+        argMap:[
+        ]
+    },
     'hello:': {
         opcode: 'services_hello',
-        argMap: [
-        ]
-    },
-    'playSound:': {
-        opcode: 'sound_play',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sound_sounds_menu',
-                inputName: 'SOUND_MENU'
-            }
-        ]
-    },
-    'doPlaySoundAndWait': {
-        opcode: 'sound_playuntildone',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sound_sounds_menu',
-                inputName: 'SOUND_MENU'
-            }
-        ]
-    },
-    'stopAllSounds': {
-        opcode: 'sound_stopallsounds',
-        argMap: [
-        ]
-    },
-    'playDrum': {
-        opcode: 'sound_playdrumforbeats',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'DRUM'
-            },
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'BEATS'
-            }
-        ]
-    },
-    'rest:elapsed:from:': {
-        opcode: 'sound_restforbeats',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'BEATS'
-            }
-        ]
-    },
-    'noteOn:duration:elapsed:from:': {
-        opcode: 'sound_playnoteforbeats',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'NOTE'
-            },
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'BEATS'
-            }
-        ]
-    },
-    'instrument:': {
-        opcode: 'sound_setinstrumentto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'INSTRUMENT'
-            }
-        ]
-    },
-    'changeVolumeBy:': {
-        opcode: 'sound_changevolumeby',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'VOLUME'
-            }
-        ]
-    },
-    'setVolumeTo:': {
-        opcode: 'sound_setvolumeto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'VOLUME'
-            }
-        ]
-    },
-    'volume': {
-        opcode: 'sound_volume',
-        argMap: [
-        ]
-    },
-    'changeTempoBy:': {
-        opcode: 'sound_changetempoby',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'TEMPO'
-            }
-        ]
-    },
-    'setTempoTo:': {
-        opcode: 'sound_settempotobpm',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'TEMPO'
-            }
-        ]
-    },
-    'tempo': {
-        opcode: 'sound_tempo',
         argMap: [
         ]
     },
@@ -495,176 +389,6 @@ const specMap = {
     },
     'deleteClone': {
         opcode: 'control_delete_this_clone',
-        argMap: [
-        ]
-    },
-    'touching:': {
-        opcode: 'sensing_touchingobject',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_touchingobjectmenu',
-                inputName: 'TOUCHINGOBJECTMENU'
-            }
-        ]
-    },
-    'touchingColor:': {
-        opcode: 'sensing_touchingcolor',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'colour_picker',
-                inputName: 'COLOR'
-            }
-        ]
-    },
-    'color:sees:': {
-        opcode: 'sensing_coloristouchingcolor',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'colour_picker',
-                inputName: 'COLOR'
-            },
-            {
-                type: 'input',
-                inputOp: 'colour_picker',
-                inputName: 'COLOR2'
-            }
-        ]
-    },
-    'distanceTo:': {
-        opcode: 'sensing_distanceto',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_distancetomenu',
-                inputName: 'DISTANCETOMENU'
-            }
-        ]
-    },
-    'doAsk': {
-        opcode: 'sensing_askandwait',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'text',
-                inputName: 'QUESTION'
-            }
-        ]
-    },
-    'answer': {
-        opcode: 'sensing_answer',
-        argMap: [
-        ]
-    },
-    'keyPressed:': {
-        opcode: 'sensing_keypressed',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_keyoptions',
-                inputName: 'KEY_OPTION'
-            }
-        ]
-    },
-    'mousePressed': {
-        opcode: 'sensing_mousedown',
-        argMap: [
-        ]
-    },
-    'mouseX': {
-        opcode: 'sensing_mousex',
-        argMap: [
-        ]
-    },
-    'mouseY': {
-        opcode: 'sensing_mousey',
-        argMap: [
-        ]
-    },
-    'soundLevel': {
-        opcode: 'sensing_loudness',
-        argMap: [
-        ]
-    },
-    'senseVideoMotion': {
-        opcode: 'sensing_videoon',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_videoonmenuone',
-                inputName: 'VIDEOONMENU1'
-            },
-            {
-                type: 'input',
-                inputOp: 'sensing_videoonmenutwo',
-                inputName: 'VIDEOONMENU2'
-            }
-        ]
-    },
-    'setVideoState': {
-        opcode: 'sensing_videotoggle',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_videotogglemenu',
-                inputName: 'VIDEOTOGGLEMENU'
-            }
-        ]
-    },
-    'setVideoTransparency': {
-        opcode: 'sensing_setvideotransparency',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'math_number',
-                inputName: 'TRANSPARENCY'
-            }
-        ]
-    },
-    'timer': {
-        opcode: 'sensing_timer',
-        argMap: [
-        ]
-    },
-    'timerReset': {
-        opcode: 'sensing_resettimer',
-        argMap: [
-        ]
-    },
-    'getAttribute:of:': {
-        opcode: 'sensing_of',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_of_property_menu',
-                inputName: 'PROPERTY'
-            },
-            {
-                type: 'input',
-                inputOp: 'sensing_of_object_menu',
-                inputName: 'OBJECT'
-            }
-        ]
-    },
-    'timeAndDate': {
-        opcode: 'sensing_current',
-        argMap: [
-            {
-                type: 'input',
-                inputOp: 'sensing_currentmenu',
-                inputName: 'CURRENTMENU'
-            }
-        ]
-    },
-    'timestamp': {
-        opcode: 'sensing_dayssince2000',
-        argMap: [
-        ]
-    },
-    'getUserName': {
-        opcode: 'sensing_username',
         argMap: [
         ]
     },
