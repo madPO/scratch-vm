@@ -18,11 +18,21 @@ class Scratch3ServicesBlocks {
     getPrimitives () {
         return {
             services_hello: this.hello,
+            services_state: this.state,
+            services_lastcycle: this.lastcycle
         };
     }
 
     hello (args, util) {
         console.log('hello');
+    }
+
+    state (args, utils) {
+        console.log('state');
+    }
+
+    lastcycle (args, utils) {
+        console.log('lastcycle');
     }
 }
 

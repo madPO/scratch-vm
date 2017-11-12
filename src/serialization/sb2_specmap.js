@@ -117,6 +117,16 @@ const specMap = {
         argMap: [
         ]
     },
+    'state':{
+        opcode: 'services_state',
+        argMap: [
+        ]
+    },
+    'lastcycle':{
+        opcode:'services_lastcycle',
+        argMap:[
+        ]
+    },
     'clearPenTrails': {
         opcode: 'pen.clear',
         argMap: [
